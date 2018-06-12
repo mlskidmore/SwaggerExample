@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ADXE Tools API</title>
+    <link rel="shortcut icon" id="iconURL" onload="buildIconLink();" href="" type="image/x-icon" />
+    <script type="text/javascript">
+        function buildLink() {
+            var hrefVal = window.location.href;
+            if (hrefVal.substr(-1) != '/') {
+                hrefVal = hrefVal + '/';
+            }
+            hrefVal = hrefVal + "swagger/";
+            document.getElementById("hrefURL").href = hrefVal;
+        }
+        }
+    </script>
+</head>
+<body>
+      <table style="width: 100%; position:absolute; top:50%">
+            <tr>
+                <td width="15%"></td>
+                <td width="70%" style="font-weight: bold; font-size:200%" align="center"><a href="" id="hrefURL" onclick="buildLink();">ADXE Tools API</a></td>
+                <td width="15%"></td>
+            </tr>
+      </table>
+    
+</body>
+</html>

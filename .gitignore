@@ -1,0 +1,13 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+bin/
+obj/
+*.user
+.vs/
+project.lock.json
+.idea/
+eagle.userprefs
+.DS_Store
+.vscode
+secrets-pipeline.yml
+*secrets*
+git.properties
