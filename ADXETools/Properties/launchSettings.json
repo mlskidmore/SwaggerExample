@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "ADXETools": {
+    "SwaggerExample": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

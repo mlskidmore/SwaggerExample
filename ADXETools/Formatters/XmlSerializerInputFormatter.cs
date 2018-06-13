@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ADXETools.Formatters
+namespace SwaggerExample.Formatters
 {
     /// <summary>
     /// 

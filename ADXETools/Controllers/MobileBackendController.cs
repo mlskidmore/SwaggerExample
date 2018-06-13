@@ -1,11 +1,11 @@
-﻿using ADXETools.FalconRequests;
-using ADXETools.Model;
+﻿using SwaggerExample.FalconRequests;
+using SwaggerExample.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace ADXETools.Controllers
+namespace SwaggerExample.Controllers
 {
     /// <summary>
     /// 
@@ -50,7 +50,7 @@ namespace ADXETools.Controllers
                     return BadRequest($"Invalid input data received. Verify input request data.");
                 }
                 //var xmlOutput = request.ToXml("Request");
-                var xmlOutput = await _falconPort.SubmitFalconRequest(_aspPage, FalconRequest<MBESVRAddAttachmentRequest>.CreateRequest(request, this.GetMethodName()));
+                var xmlOutput = await _falconPort.SubmitFalconRequest(_aspPage, SwaggerExampleRequest<MBESVRAddAttachmentRequest>.CreateRequest(request, this.GetMethodName()));
                 return StatusCode(StatusCodes.Status201Created, xmlOutput);
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace ADXETools.Controllers
                 {
                     return BadRequest($"Invalid input data received. Verify input request data.");
                 }
-                var xmlOutput = await _falconPort.SubmitFalconRequest(_aspPage, FalconRequest<MBESVRAddAttEventRequest>.CreateRequest(request, this.GetMethodName()));
+                var xmlOutput = await _falconPort.SubmitFalconRequest(_aspPage, SwaggerExampleRequest<MBESVRAddAttEventRequest>.CreateRequest(request, this.GetMethodName()));
                 return StatusCode(StatusCodes.Status201Created, xmlOutput);
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace ADXETools.Controllers
                     return BadRequest($"Invalid input data received. Verify input request data.");
                 }
                 var xmlOutput = request.ToXml("Request");
-                xmlOutput = await _falconPort.SubmitFalconRequest(_aspPage, FalconRequest<MBESVRUpdateVehicle>.CreateRequest(request, this.GetMethodName()));
+                xmlOutput = await _falconPort.SubmitFalconRequest(_aspPage, SwaggerExampleRequest<MBESVRUpdateVehicle>.CreateRequest(request, this.GetMethodName()));
                 return StatusCode(StatusCodes.Status201Created, request);
             }
             catch (Exception ex)

@@ -1,10 +1,10 @@
-﻿using ADXETools.FalconRequests;
+﻿using SwaggerExample.FalconRequests;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 
-namespace ADXETools.Model
+namespace SwaggerExample.Model
 {
     /// <summary>
     /// 

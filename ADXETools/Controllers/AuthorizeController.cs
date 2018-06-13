@@ -1,4 +1,4 @@
-﻿using ADXETools.FalconRequests;
+﻿using SwaggerExample.FalconRequests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace ADXETools.Controllers
+namespace SwaggerExample.Controllers
 {
 
     /// <summary>

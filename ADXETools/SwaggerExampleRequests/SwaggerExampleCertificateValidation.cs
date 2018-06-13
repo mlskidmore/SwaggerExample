@@ -8,12 +8,12 @@ using System.ServiceModel.Security;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ADXETools.FalconRequests
+namespace SwaggerExample.FalconRequests
 {
     /// <summary>
     /// 
     /// </summary>
-    public class ADXECertificateValidationHandler : HttpClientHandler
+    public class SwaggerExampleCertificateValidationHandler : HttpClientHandler
     {
         IHostingEnvironment _hostingEnvironment;
 
@@ -21,7 +21,7 @@ namespace ADXETools.FalconRequests
         /// 
         /// </summary>
         /// <param name="hostingEnvironment"></param>
-        public ADXECertificateValidationHandler(IHostingEnvironment hostingEnvironment)
+        public SwaggerExampleCertificateValidationHandler(IHostingEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
             ServerCertificateCustomValidationCallback = ValidateRemoteCertificate;
@@ -32,13 +32,13 @@ namespace ADXETools.FalconRequests
         /// </summary>
         public class Validator : X509CertificateValidator
         {
-            ADXECertificateValidationHandler _handler;
+            SwaggerExampleCertificateValidationHandler _handler;
 
             /// <summary>
             /// 
             /// </summary>
             /// <param name="handler"></param>
-            public Validator(ADXECertificateValidationHandler handler)
+            public Validator(SwaggerExampleCertificateValidationHandler handler)
             {
                 _handler = handler;
             }
@@ -72,7 +72,7 @@ namespace ADXETools.FalconRequests
         private bool ValidateAdxeCertificate(X509Certificate cert)
         {
             string issuer = cert.Issuer.ToUpper(System.Globalization.CultureInfo.InvariantCulture);
-            return issuer.Contains("ADXE") || issuer.Contains("AUDATEX") || issuer.Contains("DO_NOT_TRUST_FIDDLERROOT") || ValidateCertificateFromEnvironment(cert);
+            return issuer.Contains("SwaggerExample") || issuer.Contains("AUDATEX") || issuer.Contains("DO_NOT_TRUST_FIDDLERROOT") || ValidateCertificateFromEnvironment(cert);
         }
 
         private bool ValidateCertificateFromEnvironment(X509Certificate cert)

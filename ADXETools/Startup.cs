@@ -1,8 +1,7 @@
-﻿using ADXETools.FalconRequests;
+﻿using SwaggerExample.FalconRequests;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -11,13 +10,12 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.Examples;
 using Swashbuckle.AspNetCore.Swagger;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.IO;
 using System.Net.Http;
 using WebApiContrib.Core.Formatter.PlainText;
 
-namespace ADXETools
+namespace SwaggerExample
 {
     /// <summary>
     /// 
@@ -71,17 +69,17 @@ namespace ADXETools
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "ADXE Tools API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "SwaggerExample API", Version = "v1" });
                 var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-                var xmlPath = Path.Combine(basePath, "ADXETools.xml");
+                var xmlPath = Path.Combine(basePath, "SwaggerExample.xml");
                 c.IncludeXmlComments(xmlPath);
                 c.OperationFilter<ExamplesOperationFilter>();
             });
 
             services.TryAddSingleton<IEnvironmentConfiguration>(new EnvironmentConfiguration(Configuration));
             services.TryAddSingleton<HttpClient>();
-            services.TryAddSingleton<IFalconPort, FalconPort>();
-            services.TryAddSingleton<ADXECertificateValidationHandler>();
+            services.TryAddSingleton<IFalconPort, SwaggerExamplePort>();
+            services.TryAddSingleton<SwaggerExampleCertificateValidationHandler>();
         }
 
         /// <summary>
@@ -109,7 +107,7 @@ namespace ADXETools
                 });
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("../swagger/v1/swagger.json", "ADXE Tools API");
+                    c.SwaggerEndpoint("../swagger/v1/swagger.json", "SwaggerExample API");
                 });
 
                 app.UseMvcWithDefaultRoute();

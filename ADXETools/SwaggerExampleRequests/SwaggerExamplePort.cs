@@ -10,7 +10,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace ADXETools.FalconRequests
+namespace SwaggerExample.FalconRequests
 {
     /// <summary>
     /// 
@@ -37,11 +37,11 @@ namespace ADXETools.FalconRequests
     /// <summary>
     /// 
     /// </summary>
-    public class FalconPort : IFalconPort
+    public class SwaggerExamplePort : IFalconPort
     {
         private readonly HttpClient _httpClient;
         private readonly IEnvironmentConfiguration _environmentalConfiguration;
-        ADXECertificateValidationHandler _adxeCertificateValidationHandler;
+        SwaggerExampleCertificateValidationHandler _adxeCertificateValidationHandler;
 
         #region Public Methods
         /// <summary>
@@ -49,7 +49,7 @@ namespace ADXETools.FalconRequests
         /// </summary>
         /// <param name="environmentalConfiguration"></param>
         /// <param name="adxeCertificateValidationHandler"></param>
-        public FalconPort(IEnvironmentConfiguration environmentalConfiguration, ADXECertificateValidationHandler adxeCertificateValidationHandler)
+        public SwaggerExamplePort(IEnvironmentConfiguration environmentalConfiguration, SwaggerExampleCertificateValidationHandler adxeCertificateValidationHandler)
         {
             _environmentalConfiguration = environmentalConfiguration;
             _adxeCertificateValidationHandler = adxeCertificateValidationHandler;

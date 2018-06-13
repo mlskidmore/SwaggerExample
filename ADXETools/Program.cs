@@ -3,7 +3,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace ADXETools
+namespace SwaggerExample
 {
     /// <summary>
     /// 
@@ -18,7 +18,7 @@ namespace ADXETools
         {
             try
             {
-                Console.Title = "ADXETools";
+                Console.Title = "SwaggerExample";
                 BuildWebHost(args).Run();
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace ADXETools
             builder.AddEnvironmentVariables();
             if (context.HostingEnvironment.IsDevelopment())
             {
-                builder.AddUserSecrets("ADXETools");
+                builder.AddUserSecrets("SwaggerExample");
             }
         })
         .UseStartup<Startup>()

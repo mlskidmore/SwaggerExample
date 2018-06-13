@@ -2,7 +2,7 @@
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ADXETools.FalconRequests
+namespace SwaggerExample.FalconRequests
 { 
     /// <summary>
     /// Templatized Falcon Request object constrained to objects of type ServiceInput
@@ -10,7 +10,7 @@ namespace ADXETools.FalconRequests
     /// <typeparam name="T">Template type constrained to objects of type ServiceInput</typeparam>
     [XmlRoot("Request")]
     [Serializable]
-    public class FalconRequest<T> where T : ServiceInput
+    public class SwaggerExampleRequest<T> where T : ServiceInput
     {
         /// <summary>
         /// 
@@ -27,9 +27,9 @@ namespace ADXETools.FalconRequests
         /// <param name="serviceInput">The service input object of desired type T</param>
         /// <param name="headerString">String to store as request header var</param>
         /// <returns></returns>
-        public static FalconRequest<T> CreateRequest(T serviceInput, string headerString)
+        public static SwaggerExampleRequest<T> CreateRequest(T serviceInput, string headerString)
         {
-            return new FalconRequest<T> { Header = new Header(headerString), ServiceInput = serviceInput };
+            return new SwaggerExampleRequest<T> { Header = new Header(headerString), ServiceInput = serviceInput };
         }
         /// <summary>
         /// 
@@ -37,9 +37,9 @@ namespace ADXETools.FalconRequests
         /// <param name="serviceInput"></param>
         /// <param name="headerObject"></param>
         /// <returns></returns>
-        public static FalconRequest<T> CreateRequest(T serviceInput, Header headerObject)
+        public static SwaggerExampleRequest<T> CreateRequest(T serviceInput, Header headerObject)
         {
-            return new FalconRequest<T> { Header = new Header(headerObject.FalconServiceRequestAction), ServiceInput = serviceInput };
+            return new SwaggerExampleRequest<T> { Header = new Header(headerObject.FalconServiceRequestAction), ServiceInput = serviceInput };
         }
     }
 

@@ -1,5 +1,5 @@
-﻿using ADXETools.FalconRequests;
-using ADXETools.Model;
+﻿using SwaggerExample.FalconRequests;
+using SwaggerExample.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace ADXETools.Controllers
+namespace SwaggerExample.Controllers
 {
     /// <summary>
     /// 

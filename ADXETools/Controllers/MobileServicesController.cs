@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using ADXETools.FalconRequests;
+using SwaggerExample.FalconRequests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Examples;
 
-namespace ADXETools.Controllers
+namespace SwaggerExample.Controllers
 {
     /// <summary>
     /// 

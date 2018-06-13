@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System.Linq;
 
-namespace ADXETools.FalconRequests
+namespace SwaggerExample.FalconRequests
 {
     /// <summary>
     /// 
